@@ -27,6 +27,6 @@ class Control extends Command
             array_push($array,$value->currency_code);
         }
 
-        $cry->getCurrency($array, Carbon::now()->format('d-m-Y'), Carbon::now()->format('d-m-Y'), 'A');
+        $cry->getCurrency($array, Carbon::now()->format('d-m-Y'), Carbon::now()->format('d-m-Y'), 'S.EF');
     }
 }

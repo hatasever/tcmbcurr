@@ -139,7 +139,7 @@ class TcmbCurrClient
      * @param currency_code format array example: ["USD","TRY"...]
      */
 
-    public function getCurrency(array $currency_code,string $startDate, string $endDate, $type = 'S')
+    public function getCurrency(array $currency_code,string $startDate, string $endDate, $type = 'S_EF')
     {
         $getParemeters = '';
         foreach ($currency_code as $key => $value) {

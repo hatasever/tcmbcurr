@@ -1,0 +1,47 @@
+{
+    "name": "hatasever/tcmbcurr",
+    "description": "TCMB Currency api",
+    "keywords": ["TCMB", "webpush", "push", "laravel", "laravel 11"],
+    "type": "library",
+    "require": {
+        "php": "^8.2",
+        "guzzlehttp/guzzle": "^7.9",
+        "illuminate/support": "^11.0"
+    },
+    "require-dev": {
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hatasever\\TcmbCurr\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Hatasever\\TcmbCurr\\TcmbCurrServiceProvider"
+            ],
+            "aliases": {
+                "TcmbCurr": "Hatasever\\TcmbCurr\\TcmbFacade"
+            }
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hakan ATASEVER",
+            "email": "soft@atasvr.com",
+            "homepage": "http://atasvr.com"
+        }
+    ],
+    "version": "1.0",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "scripts": {
+    "post-install-cmd": [
+        "php artisan migrate",
+        "php artisan db:seed --class=Hatasever\\TcmbCurr\\Database\\Seeders\\TcmbCurrSeeder",
+        "php artisan TCMBKUR:getCurrencyList"
+    ]
+    }
+}

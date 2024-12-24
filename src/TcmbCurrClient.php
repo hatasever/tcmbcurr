@@ -139,7 +139,7 @@ class TcmbCurrClient
      * @param currency_code format array example: ["USD","TRY"...]
      */
 
-    public function getCurrency(array $currency_code,string $startDate, string $endDate, $type = 'A')
+    public function getCurrency(array $currency_code,string $startDate, string $endDate, $type = 'S')
     {
         $getParemeters = '';
         foreach ($currency_code as $key => $value) {
@@ -168,7 +168,7 @@ class TcmbCurrClient
              else
              {
              if ($key != 'UNIXTIME') {
-                 array_push($currencyList,[str_replace('TPDK', '',str_replace('_','',str_replace('TP_DK_','',str_replace('_A','',$key)))),$value]);
+                 array_push($currencyList,[str_replace('TPDK', '',str_replace('_','',str_replace('TP_DK_','',str_replace('_S','',$key)))),$value]);
              }
 
              }
